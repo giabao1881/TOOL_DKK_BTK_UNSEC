@@ -4,115 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>baotg10 | Tải Tool ĐKK & BTK</title>
-  <meta name="description" content="Trang tải tool Đơn Khởi Kiện (ĐKK) và Bảng Tự Khai (BTK) - baotg10" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
     :root{
       --bg0:#0b1220; --bg1:#0f172a;
       --border: rgba(255,255,255,.10);
-      --text:#e5e7eb; --muted:#94a3b8; --muted2:#64748b;
+      --text:#e5e7eb; --muted:#94a3b8;
       --p1:#3b82f6; --p2:#8b5cf6; --p3:#ec4899;
-      --shadow: 0 16px 38px rgba(0,0,0,.32);
-      --radius: 16px; --radius2: 12px;
-      --container: 940px;
+      --shadow: 0 16px 36px rgba(0,0,0,.32);
+      --r:16px; --r2:12px;
+      --w: 880px;
     }
-
     *{margin:0;padding:0;box-sizing:border-box;font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
-    html{scroll-behavior:smooth}
     body{
       min-height:100vh;color:var(--text);
       background:
-        radial-gradient(1000px 520px at 12% 10%, rgba(59,130,246,.18), transparent 55%),
+        radial-gradient(900px 520px at 12% 10%, rgba(59,130,246,.18), transparent 55%),
         radial-gradient(820px 460px at 88% 22%, rgba(236,72,153,.14), transparent 55%),
         radial-gradient(860px 480px at 55% 105%, rgba(139,92,246,.16), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
-      padding: 14px;
+      padding:14px;
     }
     a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--w);margin:0 auto}
 
-    .container{max-width:var(--container);margin:0 auto}
     .card{
       border:1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: var(--r);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
     }
 
-    /* TOP (compact) */
+    /* top bar */
     .top{
       position: sticky; top: 10px; z-index: 10;
-      padding: 10px 12px;
       display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      padding:10px 12px;
     }
     .brand{display:flex;align-items:center;gap:10px}
     .logo{
       width:36px;height:36px;border-radius:12px;
-      display:grid;place-items:center;font-weight:950;color:white;
+      display:grid;place-items:center;font-weight:950;color:#fff;
       background: linear-gradient(135deg,var(--p1),var(--p2));
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 10px 22px rgba(59,130,246,.20);
     }
     .b1{font-weight:950}
     .b2{color:var(--muted);font-size:.83rem;margin-top:1px}
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-size:.86rem;font-weight:900;
-    }
-    .pill strong{color:var(--text)}
+
+    .btns{display:flex;gap:8px;flex-wrap:wrap}
     .btn{
       border:none;border-radius:12px;padding:9px 11px;
       cursor:pointer;font-weight:950;font-size:.88rem;
       display:inline-flex;align-items:center;gap:8px;
-      color:white;transition:.18s ease;
+      transition:.16s ease; user-select:none;
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 12px 22px rgba(0,0,0,.22)}
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 12px 20px rgba(0,0,0,.22)}
     .btn:active{transform: translateY(1px)}
-    .btn-primary{background: linear-gradient(90deg,var(--p1),var(--p2))}
-    .btn-ghost{
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      color: var(--text);
-    }
+    .btn.primary{background: linear-gradient(90deg,var(--p1),var(--p2)); color:#fff}
+    .btn.ghost{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color: var(--text)}
 
-    /* HERO (compact) */
+    /* hero (compact) */
     .hero{margin-top:10px;padding:14px}
     .title{
-      font-size: clamp(1.55rem, 4.2vw, 2.15rem);
-      font-weight: 950; letter-spacing:-.6px; line-height:1.08;
+      font-size: clamp(1.45rem, 4.1vw, 2.05rem);
+      font-weight: 950; letter-spacing:-.5px; line-height:1.1;
       background: linear-gradient(90deg,var(--p1),var(--p2),var(--p3));
       -webkit-background-clip:text;background-clip:text;color:transparent;
       margin-bottom: 6px;
     }
     .sub{color:var(--muted);line-height:1.6;font-size:.98rem}
-    .note{
-      margin-top:10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: rgba(15,23,42,.32);
-      border:1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      line-height:1.55;
-      font-size:.9rem;
-    }
-    .note b{color:var(--text)}
-    code{
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      padding:2px 6px;border-radius:8px
-    }
 
-    /* TOOL cards (compact) */
-    .grid{margin-top:10px;display:grid;grid-template-columns:1fr;gap:10px}
+    /* tools */
+    .list{margin-top:10px;display:grid;gap:10px}
     .tool{
-      padding: 14px;
-      border-radius: var(--radius);
+      padding:14px;
+      border-radius: var(--r);
       border:1px solid rgba(255,255,255,.10);
       background: rgba(15,23,42,.32);
       position:relative; overflow:hidden;
@@ -121,8 +90,8 @@
       content:""; position:absolute; left:0; top:0; right:0; height:3px;
       background: linear-gradient(90deg,var(--p1),var(--p2),var(--p3)); opacity:.85;
     }
-    .toolTop{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-    .leftInfo{display:flex;gap:10px;align-items:flex-start}
+    .row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+    .left{display:flex;gap:10px;align-items:flex-start}
     .ico{
       width:40px;height:40px;border-radius:12px;
       display:grid;place-items:center;
@@ -132,10 +101,8 @@
       flex:0 0 auto;
       margin-top:2px;
     }
-    .h{font-size:1.05rem;font-weight:950;line-height:1.25}
-    .p{margin-top:6px;color:var(--muted);line-height:1.55;font-size:.93rem;max-width: 720px}
-
-    /* tags + badge (compact) */
+    .name{font-size:1.05rem;font-weight:950;line-height:1.25}
+    .desc{margin-top:6px;color:var(--muted);line-height:1.55;font-size:.93rem}
     .meta{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
     .tag{
       padding:5px 9px;border-radius:999px;
@@ -147,229 +114,105 @@
     .badge{
       display:inline-flex;align-items:center;gap:6px;
       padding:4px 9px;border-radius:999px;
-      font-size:.80rem;font-weight:950;
-      border:1px solid;
-      transform: translateY(-1px);
-      margin-left: 6px;
+      font-size:.80rem;font-weight:950;border:1px solid;
+      margin-left:6px; transform: translateY(-1px);
     }
     .live{background: rgba(34,197,94,.12); color:#22c55e; border-color: rgba(34,197,94,.25)}
     .soon{background: rgba(245,158,11,.12); color:#f59e0b; border-color: rgba(245,158,11,.25)}
 
-    /* Buttons (compact) */
-    .toolActions{
+    .actions{
+      margin-top:10px;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    @media (max-width: 620px){
-      .toolActions{grid-template-columns:1fr}
+      grid-template-columns: 1fr;
+      gap:8px;
     }
     .dl{
+      width:100%;
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding: 10px 12px;
+      padding: 11px 12px;
       border-radius: 12px;
       font-weight: 950;
-      font-size: .9rem;
-      transition:.18s ease;
-      text-align:center;
-    }
-    .dl.primary{
+      font-size: .92rem;
+      border:none;
+      cursor:pointer;
+      transition:.16s ease;
+      color:#fff;
       background: linear-gradient(90deg, rgba(59,130,246,.95), rgba(139,92,246,.95));
-      color:white;border:none;
     }
-    .dl.primary:hover{transform: translateY(-1px); box-shadow: 0 14px 24px rgba(59,130,246,.18)}
-    .dl.secondary{
+    .dl:hover{transform: translateY(-1px); box-shadow: 0 14px 22px rgba(59,130,246,.18)}
+    .dl:active{transform: translateY(1px)}
+    .dl.disabled{
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.14);
-      color: var(--text);
-    }
-    .dl.secondary:hover{transform: translateY(-1px); background: rgba(59,130,246,.10)}
-    .dl.disabled{
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
       color: rgba(203,213,225,.8);
       cursor:not-allowed;
-      opacity:.7;
+      box-shadow:none;
     }
 
-    /* FAQ (compact) */
-    .section{margin-top:10px;padding:14px}
-    .secTitle{display:flex;align-items:center;gap:10px;font-size:1.02rem;font-weight:950;margin-bottom:8px}
-    .dot{width:9px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--p1),var(--p2));box-shadow:0 0 0 4px rgba(59,130,246,.12)}
-    details{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,23,42,.32);
-      border-radius: 12px;
-      padding: 10px 11px;
-      margin-top:8px;
-    }
-    summary{cursor:pointer;font-weight:950}
-    details p{margin-top:8px;color:var(--muted);line-height:1.55;font-size:.92rem}
-
-    .footer{
-      margin-top: 10px;
+    .foot{
+      margin-top:10px;
       text-align:center;
-      color: var(--muted2);
+      color: rgba(100,116,139,.95);
       font-size: .88rem;
-      padding: 14px 6px 18px;
+      padding: 10px 6px 18px;
     }
     .hl{
       font-weight: 950;
       background: linear-gradient(90deg,var(--p1),var(--p2),var(--p3));
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
-
-    /* Modal (compact) */
-    .modal{
-      position:fixed; inset:0;
-      display:none;align-items:center;justify-content:center;
-      padding: 14px;
-      background: rgba(2,6,23,.70);
-      backdrop-filter: blur(10px);
-      z-index: 50;
-    }
-    .modal.active{display:flex}
-    .modalCard{
-      width: min(520px, 100%);
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow: 0 28px 60px rgba(0,0,0,.55);
-      overflow:hidden;
-    }
-    .modalHead{
-      display:flex;align-items:center;justify-content:space-between;
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-    .xbtn{
-      width:36px;height:36px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      cursor:pointer;
-    }
-    .modalBody{padding: 14px;color:var(--muted);line-height:1.6;font-size:.95rem}
-    .modalBody b{color:var(--text)}
-    .modalFoot{padding: 12px 14px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);justify-content:flex-end}
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrap">
+    <!-- TOP -->
     <div class="top card">
       <div class="brand">
         <div class="logo">B</div>
         <div>
           <div class="b1">baotg10</div>
-          <div class="b2">Trang tải Tool ĐKK & BTK</div>
+          <div class="b2">Tải Tool ĐKK & BTK (ZIP)</div>
         </div>
       </div>
 
-      <div class="actions">
-        <div class="pill"><i class="fa-solid fa-shield-halved"></i> <strong>An toàn</strong> <span style="opacity:.85">Link chính chủ</span></div>
-        <button class="btn btn-ghost" id="openHelp"><i class="fa-solid fa-circle-question"></i> Hướng dẫn</button>
-        <a class="btn btn-primary" href="mailto:baotg10@vpbank.com.vn"><i class="fa-solid fa-envelope"></i> Liên hệ</a>
+      <div class="btns">
+        <a class="btn ghost" id="homeBtn" href="#"><i class="fa-solid fa-grid-2"></i> Công cụ khác</a>
+        <a class="btn primary" href="mailto:baotg10@vpbank.com.vn"><i class="fa-solid fa-envelope"></i> Liên hệ</a>
       </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero card">
       <div class="title">Tải Tool ĐKK & BTK</div>
-      <div class="sub">
-        Chọn tool bạn cần và bấm <b>Tải bản mới nhất</b>. Dùng Excel macro nhớ <b>Enable Content</b>.
-      </div>
-      <div class="note">
-        <b>Tip:</b> Chỉ cần sửa 1 file <b>JSON</b> (version / link tải / ghi chú) là trang tự cập nhật.
-        <br/>Config: <code id="cfgUrlText">...</code>
-      </div>
+      <div class="sub">Bấm nút là tải trực tiếp. Tải xong giải nén rồi dùng.</div>
     </div>
 
-    <div class="grid" id="toolList"></div>
+    <!-- LIST -->
+    <div class="list" id="toolList"></div>
 
-    <div class="section card" id="faq">
-      <div class="secTitle"><span class="dot"></span> FAQ nhanh</div>
-
-      <details>
-        <summary>1) Tải về nhưng bị chặn / không tải được?</summary>
-        <p>Khuyên dùng link trực tiếp (Pages assets) hoặc GitHub Releases. Nếu cần mình chỉnh link chuẩn “download latest”.</p>
-      </details>
-
-      <details>
-        <summary>2) Mở Excel bị cảnh báo Macro?</summary>
-        <p>Bấm <b>Enable Content</b>. Nếu chính sách máy chặn macro thì cần cấu hình Trust Center (tuỳ môi trường).</p>
-      </details>
-
-      <details>
-        <summary>3) Muốn thêm hướng dẫn riêng cho từng tool?</summary>
-        <p>Thêm <code>guideUrl</code> trong JSON để hiện nút “Hướng dẫn”.</p>
-      </details>
-    </div>
-
-    <div class="footer">
-      © 2024 <span class="hl">baotg10</span>. All rights reserved.
-    </div>
-  </div>
-
-  <!-- HELP MODAL -->
-  <div class="modal" id="helpModal" aria-hidden="true">
-    <div class="modalCard">
-      <div class="modalHead">
-        <div style="font-weight:950"><i class="fa-solid fa-circle-question"></i> Hướng dẫn nhanh</div>
-        <button class="xbtn" id="closeHelp" aria-label="Đóng"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modalBody">
-        <b>B1:</b> Bấm “Tải bản mới nhất”.<br/>
-        <b>B2:</b> Giải nén .zip, mở file, bật macro (Enable Content).<br/>
-        <b>B3:</b> Nếu cần cấp quyền/phiên bản nội bộ, liên hệ email.
-        <div style="margin-top:10px">
-          Email: <b>baotg10@vpbank.com.vn</b><br/>
-          Phone: <b>0336 620 689</b>
-        </div>
-      </div>
-      <div class="modalFoot">
-        <button class="btn btn-ghost" id="copyMail"><i class="fa-regular fa-copy"></i> Copy Email</button>
-        <button class="btn btn-primary" id="copyPhone"><i class="fa-regular fa-copy"></i> Copy SĐT</button>
-      </div>
-    </div>
+    <div class="foot">© 2024 <span class="hl">baotg10</span></div>
   </div>
 
   <script>
-    // ====== CONFIG URL (SỬA Ở ĐÂY) ======
+    // ===== SỬA Ở ĐÂY =====
+    // Link quay về trang baotg10 của bạn:
+    const HOME_URL = "https://giabao1881.github.io/"; // nếu trang baotg10 của bạn là link khác thì đổi ở đây
+    document.getElementById("homeBtn").href = HOME_URL;
+
+    // Config JSON ở cùng thư mục
     const CONFIG_URL = "./dkk-btk-config.json";
-    document.getElementById("cfgUrlText").textContent = CONFIG_URL;
 
-    const defaultConfig = {
-      updatedAt: "2024-12-16",
-      tools: [
-        {
-          id: "dkk",
-          name: "Tool Đơn Khởi Kiện (ĐKK)",
-          status: "SOON",
-          icon: "fa-gavel",
-          desc: "Tải tool ĐKK dạng .zip",
-          version: "0.0.0",
-          latestUrl: "",
-          guideUrl: "",
-          tags: ["legal", "vpbank", "zip"],
-          note: "Chưa mở tải."
-        },
-        {
-          id: "btk",
-          name: "Tool Bảng Tự Khai (BTK)",
-          status: "SOON",
-          icon: "fa-file-contract",
-          desc: "Tải tool BTK dạng .zip",
-          version: "0.0.0",
-          latestUrl: "",
-          guideUrl: "",
-          tags: ["bank", "vpbank", "zip"],
-          note: "Chưa mở tải."
-        }
-      ]
-    };
-
-    const toolList = document.getElementById("toolList");
+    // Tải trực tiếp (không mở tab)
+    function directDownload(url, filename){
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename || "";
+      a.rel = "noopener";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
 
     function esc(s){ return (s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
@@ -379,58 +222,55 @@
       const badgeText = isLive ? "LIVE" : (t.status || "SOON");
 
       const tagsHtml = (t.tags || []).map(x => `<span class="tag">#${esc(x)}</span>`).join("");
-
       const canDownload = !!t.latestUrl;
 
-      const dlBtn = canDownload
-        ? `<a class="dl primary" href="${esc(t.latestUrl)}" target="_blank" rel="noopener">
-             <i class="fa-solid fa-download"></i> Tải bản mới nhất
-           </a>`
-        : `<div class="dl disabled">
-             <i class="fa-solid fa-lock"></i> Chưa mở tải
-           </div>`;
-
-      const guideBtn = t.guideUrl
-        ? `<a class="dl secondary" href="${esc(t.guideUrl)}" target="_blank" rel="noopener">
-             <i class="fa-solid fa-book"></i> Hướng dẫn
-           </a>`
-        : `<a class="dl secondary" href="#faq">
-             <i class="fa-solid fa-circle-info"></i> FAQ
-           </a>`;
+      const fileName = t.fileName || (t.latestUrl ? t.latestUrl.split("/").pop().split("?")[0] : "");
 
       return `
         <div class="tool">
-          <div class="toolTop">
-            <div class="leftInfo">
+          <div class="row">
+            <div class="left">
               <div class="ico"><i class="fa-solid ${esc(t.icon || "fa-screwdriver-wrench")}"></i></div>
               <div>
-                <div class="h">
+                <div class="name">
                   ${esc(t.name || "")}
                   <span class="${badgeClass}">${esc(badgeText)}</span>
                 </div>
-                <div class="p">${esc(t.desc || "")}</div>
+                <div class="desc">${esc(t.desc || "")}</div>
 
                 <div class="meta">
                   <span class="tag">v${esc(t.version || "0.0.0")}</span>
                   ${tagsHtml}
                 </div>
 
-                ${t.note ? `<div class="p" style="margin-top:7px;color:var(--muted2)"><i class="fa-solid fa-note-sticky"></i> ${esc(t.note)}</div>` : ``}
+                ${t.note ? `<div class="desc" style="margin-top:7px;color:rgba(100,116,139,.95)"><i class="fa-solid fa-note-sticky"></i> ${esc(t.note)}</div>` : ``}
               </div>
             </div>
           </div>
 
-          <div class="toolActions">
-            ${dlBtn}
-            ${guideBtn}
+          <div class="actions">
+            ${
+              canDownload
+              ? `<button class="dl" data-url="${esc(t.latestUrl)}" data-name="${esc(fileName)}">
+                   <i class="fa-solid fa-download"></i> Tải ngay
+                 </button>`
+              : `<button class="dl disabled" disabled>
+                   <i class="fa-solid fa-lock"></i> Chưa mở tải
+                 </button>`
+            }
           </div>
         </div>
       `;
     }
 
-    function render(config){
-      toolList.innerHTML = "";
-      (config.tools || []).forEach(t => toolList.innerHTML += renderTool(t));
+    function bindDownloadButtons(){
+      document.querySelectorAll(".dl[data-url]").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const url = btn.getAttribute("data-url");
+          const name = btn.getAttribute("data-name") || "";
+          directDownload(url, name);
+        });
+      });
     }
 
     async function loadConfig(){
@@ -438,35 +278,25 @@
         const res = await fetch(CONFIG_URL, { cache: "no-store" });
         if(!res.ok) throw new Error("HTTP " + res.status);
         const cfg = await res.json();
-        render(cfg);
+
+        const list = document.getElementById("toolList");
+        list.innerHTML = (cfg.tools || []).map(renderTool).join("");
+        bindDownloadButtons();
       }catch(e){
-        render(defaultConfig);
+        // fallback nếu JSON lỗi
+        const fallback = {
+          tools: [
+            { name:"Tool Đơn Khởi Kiện (ĐKK)", status:"LIVE", icon:"fa-gavel", desc:"Tải tool ĐKK dạng .zip", version:"1.0.0", latestUrl:"./TOOL_DON_KHOI_KIEN.zip", tags:["zip"] },
+            { name:"Tool Bảng Tự Khai (BTK)", status:"LIVE", icon:"fa-file-contract", desc:"Tải tool BTK dạng .zip", version:"1.0.0", latestUrl:"./TOOL_BTK_TINCHAP.zip", tags:["zip"] }
+          ]
+        };
+        const list = document.getElementById("toolList");
+        list.innerHTML = fallback.tools.map(renderTool).join("");
+        bindDownloadButtons();
       }
     }
+
     loadConfig();
-
-    // Help modal
-    const helpModal = document.getElementById("helpModal");
-    const openHelp = document.getElementById("openHelp");
-    const closeHelp = document.getElementById("closeHelp");
-
-    function openM(){ helpModal.classList.add("active"); helpModal.setAttribute("aria-hidden","false"); }
-    function closeM(){ helpModal.classList.remove("active"); helpModal.setAttribute("aria-hidden","true"); }
-
-    openHelp.addEventListener("click", openM);
-    closeHelp.addEventListener("click", closeM);
-    helpModal.addEventListener("click", (e)=>{ if(e.target === helpModal) closeM(); });
-    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeM(); });
-
-    async function copyText(t){
-      try{ await navigator.clipboard.writeText(t); alert("Đã sao chép!"); }
-      catch(e){
-        const ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta);
-        ta.select(); document.execCommand("copy"); ta.remove(); alert("Đã sao chép!");
-      }
-    }
-    document.getElementById("copyMail").addEventListener("click", ()=>copyText("baotg10@vpbank.com.vn"));
-    document.getElementById("copyPhone").addEventListener("click", ()=>copyText("0336620689"));
   </script>
 </body>
 </html>
