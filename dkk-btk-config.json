@@ -8,10 +8,11 @@
       "icon": "fa-gavel",
       "desc": "Tải tool ĐKK dạng .zip",
       "version": "1.0.0",
-      "latestUrl": "https://giabao1881.github.io/TOOLS/assets/TOOL_DON_KHOI_KIEN.zip",
-      "guideUrl": "",
+      "latestUrl": "./TOOL_DON_KHOI_KIEN.zip",
+      "fileName": "TOOL_DON_KHOI_KIEN.zip",
+      "guideUrl": "https://LINK_VIDEO_HUONG_DAN_DKK",
       "tags": ["legal", "vpbank", "zip"],
-      "note": "File .zip - tải về và giải nén để dùng."
+      "note": "Tải về -> giải nén -> dùng."
     },
     {
       "id": "btk",
@@ -20,10 +21,11 @@
       "icon": "fa-file-contract",
       "desc": "Tải tool BTK dạng .zip",
       "version": "1.0.0",
-      "latestUrl": "https://giabao1881.github.io/TOOLS/assets/TOOL_BTK_TINCHAP.zip",
-      "guideUrl": "",
+      "latestUrl": "./TOOL_BTK_TINCHAP.zip",
+      "fileName": "TOOL_BTK_TINCHAP.zip",
+      "guideUrl": "https://LINK_VIDEO_HUONG_DAN_BTK",
       "tags": ["bank", "vpbank", "zip"],
-      "note": "File .zip - tải về và giải nén để dùng."
+      "note": "Tải về -> giải nén -> dùng."
     }
   ]
 }
