@@ -77,6 +77,59 @@
     }
     .sub{color:var(--muted);line-height:1.6;font-size:.98rem}
 
+    /* notes box */
+    .notes{margin-top:10px;padding:12px 14px}
+    .notesHead{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+    .notesIcon{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background: rgba(245,158,11,.12);
+      border:1px solid rgba(245,158,11,.22);
+      color:#fbbf24;
+      flex:0 0 auto;
+    }
+    .notesTitle{font-weight:950}
+    .notesDesc{color:var(--muted);font-size:.92rem;line-height:1.55}
+    details.notesToggle{
+      margin-top:10px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      background: rgba(15,23,42,.26);
+      overflow:hidden;
+    }
+    details.notesToggle > summary{
+      cursor:pointer;
+      list-style:none;
+      padding:10px 12px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      font-weight:950;
+      user-select:none;
+    }
+    details.notesToggle > summary::-webkit-details-marker{display:none}
+    .chev{opacity:.8}
+    .noteBody{padding:10px 12px 12px}
+    .noteList{margin:0;padding-left:18px}
+    .noteList li{
+      margin:8px 0;
+      color: rgba(203,213,225,.92);
+      line-height:1.55;
+      font-size:.93rem;
+    }
+    .noteList b{color:#fff}
+    .noteSteps{
+      margin-top:6px;
+      padding:9px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: rgba(203,213,225,.92);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
     /* tools */
     .list{margin-top:10px;display:grid;gap:10px}
     .tool{
@@ -205,6 +258,42 @@
     <div class="hero card">
       <div class="title">Tải Tool ĐKK & BTK</div>
       <div class="sub">Bấm “Tải ngay” để tải trực tiếp. Nút “Hướng dẫn” sẽ mở video.</div>
+    </div>
+
+    <!-- ===== LƯU Ý HIỂN THỊ CHO NGƯỜI DÙNG ===== -->
+    <div class="notes card">
+      <div class="notesHead">
+        <div class="notesIcon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div>
+          <div class="notesTitle">Lưu ý khi sử dụng</div>
+          <div class="notesDesc">Đọc nhanh 10 giây để tránh lỗi mở file / chạy lại dữ liệu.</div>
+        </div>
+      </div>
+
+      <details class="notesToggle" open>
+        <summary>
+          <span><i class="fa-solid fa-circle-info"></i> Hướng dẫn xử lý Protected View & tạo lại hồ sơ</span>
+          <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+
+        <div class="noteBody">
+          <ol class="noteList">
+            <li>
+              <b>Tắt Protected View (Word)</b> nếu file tải về bị chặn hoặc không cho chỉnh sửa/chạy:
+              <div class="noteSteps">
+                Word → <b>File</b> → <b>Options</b> → <b>Trust Center</b> → <b>Trust Center Settings</b> → <b>Protected View</b> → bỏ chọn các ô <b>“Enable Protected View”</b> → <b>OK</b>.
+              </div>
+            </li>
+            <li>
+              <b>Nếu đã tạo đơn rồi mà muốn tạo lại cho đúng “mã khách hàng” đó</b>:
+              <div class="noteSteps">
+                Hãy <b>xóa</b> người đó khỏi danh sách đã tạo hoặc <b>di chuyển</b> sang chỗ khác (để tool không hiểu là “đã có rồi”).  
+                Trường hợp vẫn cần chạy lại, bạn có thể <b>Save As</b> sang file/thư mục khác hoặc <b>xóa/di chuyển</b> file kết quả cũ rồi chạy lại.
+              </div>
+            </li>
+          </ol>
+        </div>
+      </details>
     </div>
 
     <div class="list" id="toolList"></div>
